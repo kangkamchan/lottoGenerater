@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+    </head>
+    <body>
+        <script>
+            function getRandNum(max) {
+                return Math.floor(Math.random() * max) + 1;
+            }
+
+            function getLottoNumber() {
+                let lotto = [0, 0, 0, 0, 0, 0];
+                for (let i = 0; i < lotto.length; i++) {
+                    lotto[i] = getRandNum(45);
+                    if (i == 0) {
+                        continue;
+                    } else {
+                        for (let j = 0; j < i; j++) {
+                            if (lotto[i] == lotto[j]) {
+                                i = i - 1;
+                                continue;
+                            } else {
+                                continue;
+                            }
+                        }
+                    }
+                }
+                return lotto;
+            }
+            document.write(getLottoNumber());
+        </script>
+    </body>
+</html>
